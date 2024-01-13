@@ -1,0 +1,53 @@
+## functions with default parameters
+def hello(year=2019):
+    print(f'Hello World {year}')
+
+
+hello(2020)  # function parameter is passed
+hello()  # function parameter is not passed, so default value will be used
+
+## Returning Multiple Values one by one using the yield keyword
+def return_odd_ints(i):
+    x = 1
+    while x <= i:
+        yield x
+        x += 2
+
+
+output = return_odd_ints(10)
+for out in output:
+    print(out)
+
+
+## Recursive functions
+
+def fibonacci_numbers_at_index(count):
+    if count <= 1:
+        return count
+    else:
+        return fibonacci_numbers_at_index(count - 1) + fibonacci_numbers_at_index(count - 2)
+
+
+count = 5
+i = 1
+while i <= count:
+    print(fibonacci_numbers_at_index(i))
+    i += 1
+
+
+## Data Type of Function
+def foo():
+    pass
+
+
+print(type(foo))
+
+## Anonymous Function in Python
+def square(x):
+    return x * x
+
+
+f_square = lambda x: x * x
+
+print(square(10))  # 100
+print(f_square(10))  # 100
